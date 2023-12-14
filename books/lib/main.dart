@@ -1,4 +1,6 @@
 import 'package:books/geolocation.dart';
+import 'package:books/navigation_dialog.dart';
+import 'package:books/navigation_first.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:async';
@@ -22,10 +24,13 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: const FuturePage(),
-      home: const LocationScreen(),
+      // home: const LocationScreen(),
+      // home: const NavigationFirst(),
+      home: const NavigationDialogScreen(),
     );
   }
 }
+
 
 class FuturePage extends StatefulWidget {
   const FuturePage({super.key});
@@ -57,30 +62,29 @@ class _FuturePageState extends State<FuturePage> {
                   result = onError.toString();
                 });
               }).whenComplete(() => print('Complete'));
-              // getNumber().then((value) {
-              //   setState(() {
-              //     result = value.toString();
-              //   });
-              // }).catchError((e) {
-              //   result = 'An error occurred';
-              // });
+              getNumber().then((value) {
+                setState(() {
+                  result = value.toString();
+                });
+              }).catchError((e) {
+                result = 'An error occurred';
+              });
 
-              // getNumber().then((value) {
-              //   setState(() {
-              //     result = value.toString();
-              //   });
-              // });
-              // count();
-              // setState(() {});
-              // getData().then((value) {
-              //   result = value.body.toString().substring(0, 450);
-              //   setState(() {});
-              // }).catchError((_) {
-              //   result = 'An error oncurred';
-              //   setState(() {});
-              // });
-            },
-          ),
+              getNumber().then((value) {
+                setState(() {
+                  result = value.toString();
+                });
+              });
+              count();
+              setState(() {});
+              getData().then((value) {
+                result = value.body.toString().substring(0, 450);
+                setState(() {});
+              }).catchError((_) {
+                result = 'An error oncurred';
+                setState(() {});
+              });
+            }),
           const Spacer(),
           Text(result),
           const Spacer(),
