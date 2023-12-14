@@ -121,7 +121,7 @@ Tambahkan dependensi dengan mengetik perintah di bawah
 
 7. Soal 7 : Capture hasil praktikum Anda berupa GIF dan lampirkan di README. 
 
-### Lngkah 4 : Ganti variabel futureGroup
+### Langkah 4 : Ganti variabel futureGroup
 
 ![Screenshot hello_word](image/img3_p4.jpg)
 
